@@ -8,7 +8,7 @@ def sort_by_freq(arr):
         else:
             hash_map[i] = 1
     
-    sorted_items = sorted(hash_map.items(),key=lambda item: item[1])
+    sorted_items = sorted(arr,key=lambda item: item[1])
     
     res = []
     
