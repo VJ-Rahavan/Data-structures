@@ -1,6 +1,15 @@
 # Input: s = "cbaebabacd", p = "abc"
 # Output: [0,6]
 
+# I use a fixed-size sliding window of length equal to the pattern.
+#  First, I build a frequency map of the pattern. 
+# As I expand the window, I update the frequency map for the current window. 
+# If the window becomes larger than the pattern, 
+# I remove the leftmost character and shrink it. 
+# Once the window size equals the pattern length, # I compare the two frequency maps. 
+# If they match, it means the current window is an anagram, 
+# so I record the starting index.
+
 def find_all_anagrams(s,p):
     
     res = []
