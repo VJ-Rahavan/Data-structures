@@ -1,3 +1,10 @@
+# I implemented a stack using a single queue. 
+# The key idea is that after every insertion,
+#  I rotate the queue so the newly inserted element moves to the front. 
+# This ensures the front of the queue always represents the top of the stack. 
+# As a result, pop() and top() become straightforward front-queue operations, 
+# while push() takes O(n) because of the rotation.
+
 from collections import deque
 
 class MyStack:
