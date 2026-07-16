@@ -6,6 +6,8 @@
 # If they don't match, the string is invalid. At the end, the stack must be empty, 
 # otherwise there are unmatched opening brackets.
 
+#ADDed a test case to check the function with a string that has mismatched brackets.
+
 def is_valid_paran(s):
     stack = []
 
@@ -29,3 +31,5 @@ def is_valid_paran(s):
 
 
 print(is_valid_paran("({)}[]{}"))
+print(is_valid_paran("({[]})"))
+print(is_valid_paran("({[})"))
