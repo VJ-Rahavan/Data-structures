@@ -26,3 +26,16 @@ class MyStack:
 
     def empty(self):
         return not self.q
+
+#Test cases to validate the implementation of MyStack
+if __name__ == "__main__":
+    stack = MyStack()
+    stack.push(1)
+    stack.push(2)
+    assert stack.top() == 2, "Test Case 1 Failed"
+    assert stack.pop() == 2, "Test Case 2 Failed"
+    assert not stack.empty(), "Test Case 3 Failed"
+    assert stack.pop() == 1, "Test Case 4 Failed"
+    assert stack.empty(), "Test Case 5 Failed"
+    
+    print("All test cases passed!")
