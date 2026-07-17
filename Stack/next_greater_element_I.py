@@ -26,3 +26,19 @@ class Solution:
             res.append(hash_map[i])
 
         return res
+    
+#Duplicated numbers allowed in nums1 and nums2.
+def next_greater(arr):
+    stack = []
+    result = [-1] * len(arr)
+
+    for i in range(len(arr) - 1, -1, -1):
+        while stack and stack[-1] <= arr[i]:
+            stack.pop()
+
+        if stack:
+            result[i] = stack[-1]
+
+        stack.append(arr[i])
+
+    return result
