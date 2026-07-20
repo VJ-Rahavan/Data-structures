@@ -30,3 +30,26 @@ def sortColors(nums):
 
 nums = [2, 0, 2, 1, 1, 0]
 print(sortColors(nums))
+#Test cases to validate the implementation of sortColors
+if __name__ == "__main__":
+    nums1 = [2, 0, 2, 1, 1, 0]
+    expected_output1 = [0, 0, 1, 1, 2, 2]
+    assert sortColors(nums1) == expected_output1, "Test Case 1 Failed"
+
+    nums2 = [0]
+    expected_output2 = [0]
+    assert sortColors(nums2) == expected_output2, "Test Case 2 Failed"
+
+    nums3 = [1]
+    expected_output3 = [1]
+    assert sortColors(nums3) == expected_output3, "Test Case 3 Failed"
+
+    nums4 = [2, 0, 1]
+    expected_output4 = [0, 1, 2]
+    assert sortColors(nums4) == expected_output4, "Test Case 4 Failed"
+
+    nums5 = [0, 0, 0]
+    expected_output5 = [0, 0, 0]
+    assert sortColors(nums5) == expected_output5, "Test Case 5 Failed"
+
+    print("All test cases passed!")
