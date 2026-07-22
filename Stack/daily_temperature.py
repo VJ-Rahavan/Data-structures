@@ -21,3 +21,17 @@ class Solution:
 # "Before processing the current day, I remove all days that aren't warmer than the current temperature. "
 # "The remaining top of the stack, if any, is the nearest warmer day, so the answer is the difference in indices. "
 # " Each index is pushed and popped at most once, giving O(n) time complexity."
+
+#Left to Right Approach
+class Solution:
+    def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
+        st = []
+        res = [0] * len(temperatures)
+
+        for i in range(len(temperatures)):
+            while st and temperatures[i] > temperatures[st[-1]]:
+                idx = st.pop()
+                res[idx] = i - idx
+            st.append(i)
+        
+        return res
