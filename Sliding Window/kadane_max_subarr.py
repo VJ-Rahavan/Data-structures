@@ -14,7 +14,6 @@ def max_subarr(arr):
     
     res = arr[0]
     cur = res
-    start = 0
     
     for i in range(1,len(arr)):
         cur = max(cur+arr[i], arr[i])
