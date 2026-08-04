@@ -6,6 +6,7 @@
 #         self.right = right
 from collections import deque
 
+#BFS Approach
 class Solution:
     def invertTree(self, root):
         if not root:
@@ -22,5 +23,18 @@ class Solution:
                 q.append(node.left)
             if node.right:
                 q.append(node.right)
+
+        return root
+
+#DFS Approach
+class Solution:
+    def invertTree(self, root):
+        if not root:
+            return
+
+        root.left, root.right = root.right, root.left
+
+        self.invertTree(root.left)
+        self.invertTree(root.right)
 
         return root
