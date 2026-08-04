@@ -4,6 +4,12 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+# We recursively visit each node in the tree. 
+# At every node, we swap its left and right children, 
+# then recursively invert the left and right subtrees. 
+# The base case is when the current node is None, where recursion stops. 
+# Since every node is processed once, the time complexity is O(n).
 from collections import deque
 
 #BFS Approach
