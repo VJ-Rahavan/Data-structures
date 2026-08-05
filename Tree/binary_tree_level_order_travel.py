@@ -23,8 +23,6 @@ class Solution:
                h[level].append(node.val)
             else:
                 h[level] = [node.val]
-                
-            prev_level = level
             
             if node.left:
                 queue.append((level+1,node.left))
