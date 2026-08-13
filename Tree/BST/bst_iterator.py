@@ -4,6 +4,16 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+
+### Interview Explanation
+
+# * I use a **stack to simulate inorder traversal** of the BST, because inorder traversal gives values in sorted order.
+# * During initialization, I push the **entire left path** from the root into the stack.
+# * In `next()`, I pop the smallest node, then move to its right subtree and push that subtree's **left path**.
+# * `hasNext()` simply checks whether the stack is non-empty.
+# * This gives **O(h) space**, where `h` is the tree height, and `next()` takes **O(h) worst-case** but **O(1) amortized** time.
+
 from typing import Optional
 
 class BSTIterator:
