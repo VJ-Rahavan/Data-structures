@@ -8,3 +8,15 @@ def rev_print(n):
     print(n)
 
 rev_print(10)
+
+
+# Print N → 1
+
+def rev_print(n):
+    if n == 0:
+        return    
+
+    print(n)
+    rev_print(n-1)
+
+rev_print(10)
