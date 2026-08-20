@@ -1,7 +1,6 @@
 from collections import defaultdict
 from typing import List
 
-
 # I group the reserved seats by row and ignore seats 1 and 10 
 # because they cannot be part of any valid four-seat family block. 
 # I initially assume every row can fit two families, giving 2 * n. 
