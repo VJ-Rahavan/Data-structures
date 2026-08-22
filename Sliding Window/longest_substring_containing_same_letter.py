@@ -14,27 +14,30 @@
 # If the window size minus the highest character frequency is greater than k,
 #  I shrink from the left. For every valid window, I update the maximum length.
 
-def find_longest(arr,k):
-    freq = {}
-    
-    start = 0
-    n = len(arr)
-    res = 0
-    
-    for i in range(n):
-        freq[arr[i]] = freq.get(arr[i], 0) + 1
-        
-        window_size = i - start + 1
-        max_freq = max(freq.values())
+# I'll use a sliding window. 
+# As I expand the window, I'll maintain the frequency of each character and track the maximum frequency of any character seen in the window.
+# If the number of characters that need replacement, which is (window_size - max_freq), 
+# If it exceeds k, I'll shrink the window from the left.
+# After every valid window, I'll update the maximum length.
 
-        while window_size - max_freq > k:
-                freq[arr[start]] -= 1
+class Solution:
+    def characterReplacement(self, s: str, k: int) -> int:
+        seen = {}
+        maxx = 0
+        start = 0
+        max_freq = 0
+
+        for i in range(len(s)):
+            seen[s[i]] = seen.get(s[i],0) + 1
+
+            window_size = i - start + 1
+            max_freq = max(max_freq, seen[s[i]])
+
+            while window_size - max_freq > k:
+                seen[s[start]] -= 1
                 start += 1
-                
-        res = max(res, i - start + 1)
-        
-    print(freq, res)
-    
-    
-    
-find_longest("ABAB",2)    
+                window_size = i - start + 1
+            
+            maxx = max(maxx,window_size)
+
+        return maxx
