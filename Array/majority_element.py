@@ -12,7 +12,11 @@ def majority_element(arr):
     for num in arr:
         if count == 0:
             candidate = num
-        count += 1 if num == candidate else -1
+            
+        if num == candidate:
+            count += 1
+        else:
+            count -= 1
 
     return candidate
 
