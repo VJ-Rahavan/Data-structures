@@ -1,3 +1,9 @@
+# I use Prefix Sum + Hash Map to find the longest subarray with sum k.
+# For each index, I calculate the current prefix sum and check whether prefixSum - k was seen before.
+# If it exists at index j, then the subarray from j + 1 to the current index has sum k, with length i - j.
+# I store only the first occurrence of each prefix sum because it gives the longest possible subarray.
+
+
 arr= [10, 5, 2, 7, 1, -10]
 k = 15
 # Output: 6
