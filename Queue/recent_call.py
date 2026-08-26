@@ -22,3 +22,25 @@ class RecentCounter:
 # Your RecentCounter object will be instantiated and called as such:
 # obj = RecentCounter()
 # param_1 = obj.ping(t)
+
+#simple approach using arr
+class RecentCounter:
+
+    def __init__(self):
+        self.arr = []
+
+    def ping(self, t: int) -> int:
+        r = t - 3000
+        self.arr.append(t)
+        count = 0
+        for i in self.arr:
+            if i >= r and i <= t:
+                count+=1
+        
+        return count
+
+
+
+# Your RecentCounter object will be instantiated and called as such:
+# obj = RecentCounter()
+# param_1 = obj.ping(t)
