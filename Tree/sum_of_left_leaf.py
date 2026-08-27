@@ -17,8 +17,8 @@ class Solution:
             if is_left and not node.left and not node.right:
                 cur = cur + node.val
 
-            left = find(node.left,True)
-            right = find(node.right,False)
+            find(node.left,True)
+            find(node.right,False)
 
         find(root,False)
         
@@ -27,6 +27,8 @@ class Solution:
     
 #recursive approach returning value
 def f(root, isLeft=False):
-    if not root: return 0
-    if not root.left and not root.right and isLeft: return root.val
+    if not root: 
+        return 0
+    if not root.left and not root.right and isLeft: 
+        return root.val
     return f(root.left, True)+f(root.right, False)
