@@ -19,3 +19,34 @@ class Solution:
             res = (res + pow(x, y, MOD)) % MOD
 
         return res
+
+#without using string conversion
+class Solution:
+    def sumDecoded(self, nums: list[int]) -> int:
+        MOD = 1_000_000_007
+        res = 0
+
+        for num in nums:
+            width = num % 10
+            d = num // 10
+
+            # Count total digits in d
+            digits = 0
+            temp = d
+
+            while temp:
+                digits += 1
+                temp //= 10
+
+            # Number of digits belonging to y
+            y_digits = digits - width
+
+            divisor = 10 ** y_digits
+
+            # Split d into x and y
+            x = d // divisor
+            y = d % divisor
+
+            res = (res + pow(x, y, MOD)) % MOD
+
+        return res
