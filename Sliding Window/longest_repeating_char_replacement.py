@@ -28,16 +28,14 @@ class Solution:
         max_freq = 0
 
         for i in range(len(s)):
-            seen[s[i]] = seen.get(s[i],0) + 1
+            seen[s[i]] = seen.get(s[i], 0) + 1
 
-            window_size = i - start + 1
             max_freq = max(max_freq, seen[s[i]])
 
-            while window_size - max_freq > k:
+            while i - start + 1 - max_freq > k:
                 seen[s[start]] -= 1
                 start += 1
-                window_size = i - start + 1
-            
-            maxx = max(maxx,window_size)
+
+            maxx = max(maxx, i - start + 1)
 
         return maxx
