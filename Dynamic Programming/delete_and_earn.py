@@ -1,3 +1,5 @@
+# 740. Delete and Earn
+
 # I first count the frequency of each number, so the total value of choosing a number is `number × frequency`.
 # Then I process the unique numbers in sorted order, treating them like the House Robber problem: 
 # if two numbers are consecutive, I must choose either the current number or the previous best.
