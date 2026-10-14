@@ -1,3 +1,4 @@
+# 3723. Maximize Sum of Squares of Digits
 
 # I use a greedy approach to maximize the sum of squared digits by placing the largest possible digits first. 
 # First, I check whether the given digit sum is valid; 
